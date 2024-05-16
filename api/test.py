@@ -291,7 +291,8 @@ def exp_min_time(D1, D2, D3, D4, lt_vl_mean, lt_vl_std, ut_vl_mean, ut_vl_std,
                  speed_ut_vl_mean, speed_ut_vl_std, speed_lt_l_mean, speed_lt_l_std, 
                  speed_ut_l_mean, speed_ut_l_std, dropdown1,dropdown2,dropdown3,dropdown4,num_vl,num_l,checkbox1,checkbox2,checkbox3,checkbox4,num_runs=500):
     
-    import matplotlib.pyplot as plt
+
+                   
     from gurobipy import Model, GRB, quicksum
     import numpy as np
     import math
@@ -300,7 +301,7 @@ def exp_min_time(D1, D2, D3, D4, lt_vl_mean, lt_vl_std, ut_vl_mean, ut_vl_std,
     import pandas as pd
     import math
     import numpy as np
-    import matplotlib.pyplot as plt
+    
     from scipy.stats import pareto
     from scipy.optimize import fsolve
     import scipy.stats
@@ -542,30 +543,7 @@ def exp_min_time(D1, D2, D3, D4, lt_vl_mean, lt_vl_std, ut_vl_mean, ut_vl_std,
     print(f"Corresponding Completion Time: {median_total_time}")
     print(f"Corresponding Total Trips: {corresponding_trips}")
 
-    # Plot the histograms
-    plt.figure(figsize=(12, 4))
-
-    plt.subplot(1, 3, 1)
-    plt.hist(total_costs, bins=20, edgecolor='black')
-    plt.xlabel('Total Cost')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Total Cost')
-
-    plt.subplot(1, 3, 2)
-    plt.hist(total_completion_times, bins=20, edgecolor='black')
-    plt.xlabel('Total Completion Time')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Total Completion Time')
-
-    plt.subplot(1, 3, 3)
-    plt.hist(total_trips_list, bins=20, edgecolor='black')
-    plt.xlabel('Total Trips')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Total Trips')
-
-    plt.tight_layout()
-    plt.show()
-
+    
     print("Total Completiion Times: ",total_completion_times)
     print("Total Cost ",total_costs)
     print("Total Trips" ,total_trips_list)
@@ -855,7 +833,7 @@ def exp_min_cost(D1, D2, D3, D4, lt_vl_mean, lt_vl_std, ut_vl_mean, ut_vl_std,
                  lt_l_mean, lt_l_std, ut_l_mean, ut_l_std, speed_lt_vl_mean, speed_lt_vl_std, 
                  speed_ut_vl_mean, speed_ut_vl_std, speed_lt_l_mean, speed_lt_l_std, 
                  speed_ut_l_mean, speed_ut_l_std,dropdown1,dropdown2,dropdown3,dropdown4,num_vl,num_l,checkbox1,checkbox2,checkbox3,checkbox4,num_runs=500):
-    import matplotlib.pyplot as plt
+    
     from gurobipy import Model, GRB, quicksum
     import numpy as np
     import math
@@ -864,7 +842,7 @@ def exp_min_cost(D1, D2, D3, D4, lt_vl_mean, lt_vl_std, ut_vl_mean, ut_vl_std,
     import pandas as pd
     import math
     import numpy as np
-    import matplotlib.pyplot as plt
+    
 
     num_runs = 500  # Number of times to run the optimization
 
@@ -1168,29 +1146,7 @@ def exp_min_cost(D1, D2, D3, D4, lt_vl_mean, lt_vl_std, ut_vl_mean, ut_vl_std,
     print(f"Corresponding Total Trips: {corresponding_trips}")
 
         
-    # Plot the histograms
-    plt.figure(figsize=(12, 4))
 
-    plt.subplot(1, 3, 1)
-    plt.hist(total_costs, bins=20, edgecolor='black')
-    plt.xlabel('Total Cost')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Total Cost')
-
-    plt.subplot(1, 3, 2)
-    plt.hist(total_completion_times, bins=20, edgecolor='black')
-    plt.xlabel('Total Completion Time')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Total Completion Time')
-
-    plt.subplot(1, 3, 3)
-    plt.hist(total_trips_list, bins=20, edgecolor='black')
-    plt.xlabel('Total Trips')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Total Trips')
-
-    plt.tight_layout()
-    plt.show()
 
 
     ##### BELOW IS THE CODE WHICH WE RETURN AS FINAL RESULT FOR THE UI when the option is selected as expected min cost #######
